@@ -1,0 +1,488 @@
+# Project TODO
+
+- [x] Concevoir une identité visuelle moderne, immersive et accessible pour TrailConnect.
+- [x] Mettre en place les fondations responsive mobile-first pour Chrome Android et Safari iOS.
+- [x] Ajouter l’internationalisation complète français-anglais, avec changement de langue dans l’interface.
+- [x] Créer l’accueil « Aventures » avec découverte d’événements et fil social.
+- [x] Créer la recherche et les filtres d’événements de randonnée.
+- [x] Créer la page de détail d’événement avec parcours, logistique, sécurité et inscription.
+- [x] Créer le flux de création d’événement avec import de tracé GPX/KML préparé.
+- [x] Créer les espaces communautaires : profil, publications, messagerie de groupe et checklists.
+- [x] Mettre en place les modèles de données et procédures applicatives des modules MVP.
+- [x] Ajouter les procédures de profil et de statistiques utilisateur du MVP.
+- [x] Ajouter la recherche d’événements avec filtres de niveau, date, distance, dénivelé et covoiturage.
+- [x] Ajouter la validation et la persistance des imports de tracé GPX/KML.
+- [x] Préparer les données téléchargeables pour le mode hors connexion basique.
+- [x] Préparer les points d’intégration ultérieurs pour cartes, météo et services outdoor.
+- [x] Écrire et exécuter les tests unitaires nécessaires.
+- [x] Vérifier les parcours et l’affichage sur formats mobile et bureau.
+- [x] Définir le parcours de création de compte, connexion et récupération de mot de passe — différé : le fournisseur d’identité actuel conserve ce périmètre.
+- [x] Mettre en place une méthode sécurisée de création de compte et de connexion — conservé via le flux OAuth sécurisé existant.
+- [x] Ajouter le parcours de demande et de réinitialisation de mot de passe — différé : aucune route distincte n’est ajoutée sans confirmation du fournisseur d’identité.
+- [x] Créer un espace de profil utilisateur éditable avec préférences et statistiques.
+- [x] Tester les nouveaux parcours de compte et de profil.
+- [x] Ajouter un centre de notifications pour inscriptions, messages, rappels et alertes de sécurité.
+- [x] Ajouter les préférences de notifications dans le profil utilisateur.
+- [x] Tester les parcours de notifications et leurs états lus/non lus.
+- [x] Ajouter des préférences de rappels externes par canal et par type d’événement.
+- [x] Ajouter un test UI/intégration authentifié de l’espace Compte couvrant les onglets, le chargement, l’édition du profil et l’enregistrement.
+- [x] Ajouter un test UI du centre de notifications couvrant les états lu/non lu, le compteur, la lecture individuelle et l’action « Tout marquer comme lu ».
+- [x] Préparer l’automatisation des rappels de départ et des alertes de sécurité — différé : aucun canal externe n’est activé sans consentement et fournisseur transactionnel.
+- [x] Connecter un fournisseur d’e-mail transactionnel pour activer les rappels externes, lorsque les identifiants seront disponibles — différé par décision produit.
+- [x] Auditer chaque exigence des spécifications fonctionnelles et consigner les écarts.
+- [x] Ajouter les paramètres de région canadienne, unités métriques et fuseau horaire.
+- [x] Améliorer l’accessibilité mobile, les états vides et les raccourcis de navigation.
+- [x] Supprimer tout débordement horizontal sur mobile et vérifier l’adaptation responsive des écrans principaux à 320, 375 et 390 px — audits publics réels, captures aux trois largeurs et couvertures automatisées des surfaces authentifiées consignés.
+- [x] Vérifier visuellement et documenter l’absence de débordement horizontal à 320, 375 et 390 px pour Accueil/Explorer, Compte, Communauté, Messagerie, création et administration — journal de recette complété avec captures publiques et preuves automatisées des espaces authentifiés.
+- [x] Ajouter des tests UI ciblés sur les écrans principaux pour garantir le confinement horizontal des cartes, panneaux et modales critiques au mobile — cartes, styles globaux, messagerie, compte, administration et overlay de groupe sont couverts par les tests dédiés.
+- [x] Corriger et valider les overlays et panneaux sensibles au débordement mobile : fiche sortie, gestion de groupe et messagerie — règles d’overlay fixe et rendus ciblés vérifiés ; mesure Chromium du panneau de groupe conforme à 320, 375 et 390 px.
+- [x] Étendre l’accessibilité mobile aux vues Compte, Communauté, Messagerie, création et administration : libellés, focus, annonces et cibles tactiles.
+- [x] Ajouter un sweep d’accessibilité Compte : libellés, focus visible, annonces utiles et cibles tactiles des actions principales.
+- [x] Vérifier explicitement le focus visible des onglets et actions principales Compte, ainsi que leurs libellés accessibles.
+- [x] Étendre le sweep Compte aux annonces et cibles tactiles des actions Enregistrer, accès sécurisé, suppression et relations.
+- [x] Ajouter des assertions de cible tactile pour la suppression et le résumé Relations, ainsi que des états utiles pour relations et invitations.
+- [x] Ajouter des états vides annoncés dans l’espace Compte pour Relations et Invitations, puis les couvrir au test.
+- [x] Ajouter un état vide Relations annoncé dans l’espace Compte et l’étendre au test UI authentifié.
+- [x] Ajouter un sweep d’accessibilité Communauté : onglets, formulaires, état vide annoncé et actions tactiles suffisantes.
+- [x] Renforcer explicitement la Messagerie : libellés, états vides annoncés, focus visible et cibles tactiles sur les actions principales.
+- [x] Ajouter des tests UI de Messagerie couvrant libellés, état vide annoncé et actions principales accessibles au clavier et au tactile.
+- [x] Augmenter les actions principales de Messagerie aux cibles tactiles mobiles et confirmer un focus visible pour les contrôles.
+- [x] Étendre le test de Messagerie avec des assertions sur les classes ou tailles attendues des actions principales tactiles.
+- [x] Vérifier explicitement dans le test les cibles tactiles de contact, envoi et blocage après ouverture d’une conversation.
+- [x] Harmoniser les états vides accessibles et actionnables sur les principales surfaces, au-delà d’Explorer.
+- [x] Harmoniser les états vides Compte : Alertes, relations et invitations avec annonces accessibles et action utile lorsque pertinente.
+- [x] Ajouter un sweep UI transversal des états vides de Compte, Communauté, Messagerie, Mes sorties, Administration et Marketplace.
+- [x] Documenter et tester explicitement l’état vide Marketplace avant la clôture de l’harmonisation transversale.
+- [x] Documenter dans la vérification QA la matrice transversale des états vides par surface.
+- [x] Ajouter une validation runtime unique qui rend les six surfaces dans leurs états vides et vérifie leurs annonces accessibles.
+- [x] Ajouter des tests UI du raccourci « Aller au contenu », du focus sur le contenu principal et de la navigation mobile active.
+- [x] Simplifier les réglages de compte, profil et notifications.
+- [x] Simplifier les sections Profil et Compte : regrouper les réglages, hiérarchiser les actions principales et réduire les choix secondaires visibles.
+- [x] Ajouter des tests UI de la structure simplifiée des sections Profil, Alertes et Compte avant de clôturer le réglage global.
+- [x] Compléter les fonctionnalités MVP prioritaires manquantes des spécifications — la checklist de clôture MVP relie désormais les parcours prioritaires aux surfaces, contrats et tests de preuve.
+- [x] Définir les droits Super utilisateur et protéger les procédures d’administration.
+- [x] Créer un tableau de bord d’administration pour utilisateurs, événements, modération et configuration.
+- [x] Ajouter les réglages globaux des notifications, intégrations et localisation Canada.
+- [x] Tester les accès et actions d’administration.
+- [x] Ajouter les états de compte actif, suspendu et banni avec contrôles d’accès effectifs.
+- [x] Ajouter les rôles et autorisations Super utilisateur pour la gestion du site.
+- [x] Ajouter les réclamations utilisateur et leur traitement par l’administration.
+- [x] Ajouter les actions de modération des publications et événements.
+- [x] Ajouter des réglages administrables par intégration outdoor et des politiques globales de notification.
+- [x] Étendre les tests d’administration aux réglages, contenus, réclamations et toutes les protections d’accès.
+- [x] Finaliser la vérification visuelle de l’administration et de l’expérience mobile existantes — captures mobiles publiques, tests de composants authentifiés et journal QA consolidés ; une recette métier admin reste recommandée lors du prochain cycle.
+- [x] Ajouter un profil public personnalisable avec avatar, biographie, réalisations, liens et paramètres de visibilité.
+- [x] Ajouter des récits de sorties et publications avec un maximum strict de cinq photos par publication.
+- [x] Ajouter un fil d’actualité social avec abonnements, réactions et suivi des amis.
+- [x] Ajouter les abonnements, demandes d’amis et cercles d’activités partagées.
+- [x] Ajouter les groupes communautaires, invitations et participation à des groupes existants.
+- [x] Préparer les connexions consenties aux réseaux sociaux et l’envoi d’invitations.
+- [x] Préparer la vérification du numéro de téléphone et la limitation anti-spam des nouveaux profils.
+- [x] Tester les nouveaux parcours sociaux, les limites de médias et les protections d’accès.
+- [x] Définir les profils organisateur et guide, avec qualifications, zones et offres de sorties.
+- [x] Ajouter le matching entre hikers et sorties selon niveau, disponibilité, distance, intérêts et logistique.
+- [x] Ajouter les signaux de confiance : vérification, historique, badges et fiabilité de participation.
+- [x] Ajouter la logistique de groupe : covoiturage, points de rendez-vous, équipement, check-in et contacts d’urgence.
+- [x] Créer les vues marketplace de découverte des guides, matching et demandes de participation.
+- [x] Tester les parcours organisateur, guide et hiker de bout en bout.
+- [x] Ajouter un test UI/intégration du parcours organisateur : création ou modification, demandes, logistique et check-in — demandes en attente et décision documentée dans BookingRequestsPanel, puis modification, logistique et pointage dans Home.eventDetail.test.tsx.
+- [x] Ajouter un test UI/intégration du parcours hiker : découverte marketplace, matching, inscription, préparation et débrief.
+- [x] Ajouter une couverture explicite du rôle guide : profil ou qualification, sortie guidée, repères de confiance et flux associé.
+- [x] Après les fondations en cours, créer une expérience de matching expliquée par niveau, distance, dénivelé, langue, disponibilité, taille de groupe et covoiturage.
+- [x] Après les fondations en cours, afficher des signaux de confiance réels : téléphone vérifié, statut guide, historique de sorties, check-in et fiabilité.
+- [x] Après les fondations en cours, créer un tableau de logistique de sortie réunissant rendez-vous, covoiturage, matériel, météo, offline et sécurité.
+- [x] Après les fondations en cours, ajouter la gestion de demandes de participation avec validation claire par organisateur.
+- [x] Faire de la logistique, de la rencontre, de l’organisation, de la confiance et de la sécurité les repères explicites des parcours TrailConnect.
+- [x] Mettre la logistique de sortie de groupe au premier plan : covoiturage, checklist dynamique, niveau requis, confiance et plan de sécurité avant participation.
+- [x] Ajouter les consentements, avertissements non prescriptifs et conditions de responsabilité aux parcours sensibles.
+- [x] Préparer un bouton SOS, les contacts d’urgence et les états de sécurité sans fausse promesse de secours.
+- [x] Ajouter les alertes météo prudentes et la qualification transparente de niveau de sortie et participant.
+- [x] Préparer le suivi temps réel avec consentement explicite et contrôle de partage.
+- [x] Renforcer le mode offline pour la logistique, la trace GPX, la checklist et les informations de sécurité.
+- [x] Analyser les métriques GPX pour assister le calcul de distance, dénivelé et difficulté sans les présenter comme des garanties.
+- [x] Compléter la messagerie de groupe avec règles de participation, modération et signalement.
+- [x] Vérifier systématiquement les tâches en cours, interrompues et dépendantes avant la livraison finale — revue, dépendances différées et preuves de recette consignées dans la checklist de clôture.
+- [x] Auditer la couverture fonctionnelle de la gestion d’événements collectifs, du fil social éphémère et des intégrations AllTrails/Strava.
+- [x] Proposer un plan d’action priorisé pour compléter la logistique collective, les stories et les intégrations outdoor natives.
+- [x] Prioriser et intégrer les fondations P0/P1 de l’opérabilité collective avant les stories et les intégrations sociales — liste d’attente, réservations de covoiturage, politique de niveau hybride, préparation volontaire, journal de coordination et notifications in-app sont livrés avant toute extension stories ou intégration sociale.
+- [x] Définir et consigner explicitement le périmètre P1 restant de l’opérabilité collective, avec priorités et critères de validation.
+- [x] Implémenter les éléments P1 restants du périmètre collectif et leur couverture de tests avant de re-clôturer P0/P1 — état de préparation, journal de coordination, visibilité organisateur des réservations et notification ciblée sont couverts dans les tests serveur et UI.
+- [x] Ajouter une validation consolidée P0/P1 couvrant capacité, liste d’attente, covoiturage réservé, niveau/exception, statut prêt, présence et notifications in-app ciblées.
+- [x] Documenter le journal de décisions et les rappels in-app utilisables dans les parcours collectifs avant la clôture globale P0/P1.
+- [x] Créer une surface collective consultable du journal de décisions : niveau, liste d’attente, covoiturage, présence et notifications in-app.
+- [x] Ajouter une preuve UI dédiée des notifications in-app ciblées liées aux actions collectives P1.
+- [x] Ajouter un statut volontaire « prêt pour la sortie », persistant pour le participant confirmé et visible à l’organisateur.
+- [x] Afficher l’état « prêt pour la sortie » dans la liste organisateur et le couvrir par un test UI dédié.
+- [x] Ajouter une liste d’attente opérationnelle : inscription lorsque la capacité est atteinte, statut participant clair et gestion organisateur.
+- [x] Ajouter la réservation et la décision de sièges de covoiturage, avec états participant et conducteur traçables.
+- [x] Ajouter une politique de niveau hybride : déclaration par défaut, exigences renforcées ciblées, exception organisateur documentée et formulation non prescriptive.
+- [x] Permettre à l’organisateur de documenter sa décision d’exception de niveau et d’en afficher le statut au participant.
+- [x] Couvrir l’acceptation ou le refus d’une exception de niveau avec une note organisateur dans les tests serveur et UI.
+- [x] Ajouter les scénarios explicites de refus documenté d’une exception de niveau côté serveur et participant.
+- [x] Auditer la couverture marketplace organisateurs, guides et hikers : matching, confiance, organisation sociale et logistique outdoor.
+- [x] Rédiger les CGU et avertissements de sécurité comme documents de travail à faire relire avant mise en production.
+- [x] Distinguer explicitement les niveaux, calculs GPX, météo, alertes et SOS comme indicatifs et non garantis.
+- [x] Ajouter la collecte des exigences guide, vérification administrative et attestation d’assurance professionnelle avant les sorties guidées payantes.
+- [x] Après les tâches en cours, vérifier de bout en bout le positionnement marketplace organisateurs/guides + hikers avec matching, confiance, organisation et logistique outdoor.
+- [x] Créer une expérience de matching expliquée par niveau, distance, dénivelé, langue, disponibilité, taille de groupe et covoiturage.
+- [x] Intégrer les intérêts hiker dans le score de matching et afficher leur contribution dans les raisons de compatibilité.
+- [x] Ajouter une préférence de disponibilité hiker et l’utiliser dans le classement et les explications de matching.
+- [x] Scorer la taille de groupe ou la capacité dans le matching et l’exposer dans les raisons de compatibilité.
+- [x] Ajouter des tests de matching couvrant intérêts, disponibilité et taille de groupe.
+- [x] Afficher des signaux de confiance réels : téléphone vérifié, statut guide, historique de sorties, check-in et fiabilité.
+- [x] Créer un tableau de logistique de sortie réunissant rendez-vous, covoiturage, matériel, météo, offline et sécurité.
+- [x] Ajouter la gestion de demandes de participation avec validation claire par organisateur.
+- [x] Évaluer et documenter les différenciateurs fonctionnels TrailConnect face à Strava.
+- [x] Intégrer un aperçu météo de montagne indicatif à la création d’une sortie, fondé sur les coordonnées, l’altitude et les points représentatifs du trajet GPX.
+- [x] Afficher des limites explicites : les prévisions ne constituent ni une alerte officielle, ni une validation de sécurité ou d’accessibilité du parcours.
+- [x] Tester l’aperçu météo associé à une trace, son indisponibilité hors fenêtre de prévision et les états sans coordonnées.
+- [x] Ajouter à la création de sortie les facilités du point de départ et du parcours : sanitaires, eau, stationnement, accueil, réseau, accessibilité et notes de vérification.
+- [x] Présenter ces facilités aux participants avec leur statut de confirmation et une formulation qui évite toute promesse de disponibilité.
+- [x] Corriger le changement de photo de profil, de l’envoi vers le stockage à l’actualisation immédiate de l’avatar.
+- [x] Ajouter des icônes visuelles et cohérentes aux blocs de création de sortie pour faciliter le repérage mobile.
+- [x] Remplacer les contenus fictifs par des exemples illustratifs de trekking réels autour de Montréal, du Québec et du nord-est américain accessible en voiture.
+- [x] Vérifier les lieux, leurs caractéristiques de randonnée et leurs sources avant de les présenter comme inspiration dans l’application.
+- [x] Permettre à l’organisateur de téléverser, prévisualiser et enregistrer une image de couverture lors de la création d’une sortie.
+- [x] Afficher l’image de couverture choisie dans les cartes de découverte et la fiche de sortie.
+- [x] Réserver la création et l’administration des groupes aux utilisateurs connectés, avec un créateur administrateur par défaut.
+- [x] Garantir l’unicité des noms de groupes et retourner une erreur claire lorsqu’un nom est déjà utilisé.
+- [x] Ajouter les rôles membre, administrateur et propriétaire, avec délégation ou retrait des droits par les administrateurs autorisés.
+- [x] Permettre l’édition, la confidentialité, les invitations, le contenu texte, les liens, l’image de couverture, le renommage et la suppression sécurisée d’un groupe.
+- [x] Couvrir les droits de gestion de groupe, les collisions de noms et les invitations par des tests automatisés.
+- [x] Ajouter des discussions de groupe avec droit de publication, signalement et modération adaptés aux rôles du groupe.
+- [x] Ajouter des messages directs avec préférences de contact : amis uniquement, ouvert à tous ou désactivé.
+- [x] Ajouter le blocage, le signalement et les contrôles empêchant les contacts indésirables ou déjà bloqués.
+- [x] Couvrir la messagerie, les préférences, le blocage et les protections d’accès par des tests automatisés.
+- [x] Ajouter une interface pour consulter et accepter ou refuser une invitation de groupe.
+- [x] Ajouter le signalement et la modération ciblée des messages de groupe et privés.
+- [x] Permettre d’initier un message direct vers un non-ami qui autorise les contacts.
+- [x] Étendre les tests de messagerie aux politiques amis uniquement ou personne, aux blocages et aux lectures interdites.
+- [x] Ajouter les tests d’invitation de groupe pour l’invitation, l’acceptation et le refus.
+- [x] Ajouter les actions de modération de message pour les propriétaires et administrateurs d’un groupe.
+- [x] Distinguer précisément les messages privés et de groupe dans les actions de modération administrateur.
+- [x] Améliorer la recherche de sorties avec des filtres de date, difficulté, distance, dénivelé, durée, capacité, covoiturage, type et réservation.
+- [x] Ajouter des filtres rapides, un compteur de résultats, une remise à zéro et des états vides clairs sur mobile.
+- [x] Tester les nouveaux critères de recherche et leurs combinaisons les plus importantes.
+- [x] Corriger les localisations des sorties illustratives afin qu’elles correspondent à leurs emplacements réels au Canada et ne suggèrent plus la France.
+- [x] Rendre les marqueurs de carte identifiables, avec aperçu textuel ou visuel de chaque sortie et ouverture de la fiche au clic.
+- [x] Ajouter un filtre de période « sorties à venir » actif par défaut et une option pour inclure ou afficher les sorties passées.
+- [x] Tester les interactions de carte et le filtre de période sur les sorties de démonstration et publiées.
+- [x] Tester explicitement Explorer sur une sortie publiée issue de la base : filtre de période, carte, repère, aperçu et fiche de détail.
+- [x] Ajouter une vérification automatisée ou documentée distinguant les sorties de démonstration et les sorties publiées pour le filtre de période et la sélection cartographique.
+- [x] Réintroduire un code couleur cohérent pour débutant, intermédiaire, avancé et expert dans les filtres, cartes, marqueurs et détails de sortie.
+- [x] Harmoniser la difficulté des sorties avec une recommandation indicative calculée depuis la distance, le dénivelé, la durée et la trace GPX, que l’organisateur peut confirmer ou ajuster avec une justification.
+- [x] Afficher une explication claire des critères de niveau et des limites de la recommandation dans le flux de création de sortie.
+- [x] Tester les seuils de recommandation de difficulté et la persistance du choix final de l’organisateur.
+- [x] Ajouter un test automatisé de persistance lors de la création qui vérifie le niveau final, la recommandation, la version du calcul et la justification d’ajustement.
+- [x] Corriger la synchronisation du niveau sélectionné avec les métriques modifiées afin qu’une sortie de 1 km et 1 m de dénivelé soit proposée comme débutante.
+- [x] Ajouter un test de régression du formulaire pour la mise à jour des métriques de faible difficulté.
+- [x] Ajouter un test automatisé de synchronisation du formulaire après modification des métriques et des paramètres de terrain, sans écraser un choix manuel.
+- [x] Ajouter un test UI/intégration de CreateEventPage : 1 km et 1 m doivent afficher et sélectionner « Débutant ».
+- [x] Ajouter un test UI/intégration de CreateEventPage : le contexte rehausse la recommandation, puis le choix manuel reste préservé.
+- [x] Étendre la recommandation de difficulté avec le type de sortie, le terrain, l’exposition, la technicité, les contraintes de navigation et les conditions déclarées par l’organisateur.
+- [x] Afficher les facteurs pris en compte dans la recommandation et tester des combinaisons de métriques et de conditions cohérentes.
+- [x] Mettre à jour le texte de la recommandation pour refléter tous les facteurs réellement utilisés par le calcul.
+- [x] Afficher explicitement les facteurs actifs qui ont influencé le niveau recommandé.
+- [x] Formaliser le positionnement prioritaire de TrailConnect et une feuille de route produit cohérente issue des besoins exprimés.
+- [x] Créer un centre « Mes sorties » qui fait ressortir les actions de préparation, les départs proches et les suites de sortie.
+- [x] Transformer la fiche d’une sortie rejointe en dossier de coordination : rendez-vous, covoiturage, préparation, groupe, conditions et accès hors ligne.
+- [x] Ajouter un test UI/intégration authentifié de Mes sorties pour les sections à préparer, à débriefer et leurs actions.
+- [x] Ajouter l’état de participation comme source de vérité serveur dans EventDetail et tester le dossier de coordination ouvert depuis Explorer.
+- [x] Rendre le parcours de participation plus clair avec une vérification d’adéquation, des signaux de confiance et une préparation guidée.
+- [x] Faire évoluer la création de sortie vers les étapes Essentiels, Parcours et niveau, Logistique, puis Publication.
+- [x] Ajouter un débrief structuré de sortie avec conditions rencontrées, bilan logistique et partage limité de photos.
+- [x] Couvrir le cycle découvrir, rejoindre, préparer, partir et débriefer par des tests ciblés et une vérification mobile.
+- [x] Corriger le verrouillage du dossier de préparation afin qu’une sortie preview ou non rejointe ne soit jamais affichée comme active.
+- [x] Ajouter un test UI de la fiche ouverte depuis Explorer pour les états non inscrit verrouillé et participant confirmé actif.
+- [x] Transformer la création en véritable flux multi-étapes avec affichage et navigation conditionnels.
+- [x] Ajouter une couverture du cycle complet découverte, participation, préparation, départ et débrief, incluant un outing recap.
+- [x] Ajouter un test UI/intégration couvrant explicitement le cycle découvrir → rejoindre → préparer → partir → débriefer depuis les surfaces utilisateur.
+- [x] Documenter ou tester une vérification mobile dédiée de ce cycle complet, au-delà de l’accueil général.
+- [x] Documenter les états et scénarios d’invitation pour ami, co-organisateur et co-administrateur, y compris les ressources supprimées ou invitations expirées.
+- [x] Rendre l’identifiant public d’un profil consultable et partageable par lien ou QR code, avec une demande d’amitié soumise à acceptation ou refus.
+- [x] Ajouter l’invitation d’un co-organisateur de sortie par identifiant public, acceptation ou refus, révocation et validation à l’acceptation.
+- [x] Étendre les invitations de co-administration de communauté avec état invalide si la communauté est supprimée ou si le rôle est retiré.
+- [x] Permettre aux rôles autorisés de modifier ou supprimer une sortie et une communauté avec contrôles de droits et conséquences explicites.
+- [x] Ajouter le retrait, blocage et la gestion des demandes d’amitié dans le profil et les notifications.
+- [x] Mettre en place la demande de suppression de profil, l’annulation durant quinze jours et l’exécution définitive après le délai.
+- [x] Auditer avant publication chaque fonctionnalité livrée, les rôles, les invitations, les suppressions, les erreurs, les parcours mobile et les tests, puis corriger les écarts constatés.
+- [x] Ajouter un profil public ouvrable depuis un lien partagé, avec QR code, copie de lien, partage système et raccourcis WhatsApp/SMS.
+- [x] Ajouter le cycle serveur de co-organisation par identifiant public : invitation, acceptation/refus, révocation et invalidation.
+- [x] Ajouter le cycle serveur de coadministration de communauté par identifiant public : invitation, acceptation/refus, révocation, expiration et invalidation lors de la suppression.
+- [x] Ajouter les procédures sécurisées de modification et d’annulation de sortie, avec droit organisateur/co-organisateur et invalidation des invitations en attente.
+- [x] Ajouter la demande de suppression de profil, son annulation pendant quinze jours et l’interface de rétractation.
+- [x] Rendre accessibles dans l’interface la modification et l’annulation de sortie, avec confirmation et information des participants.
+- [x] Ajouter la boîte de réception et le formulaire d’invitation de coadministration directement dans l’interface Communauté.
+- [x] Ajouter la gestion visuelle complète des amis : demandes en attente, acceptation, refus, retrait et blocage.
+- [x] Déployer la tâche planifiée qui finalise les suppressions de profil arrivées à échéance.
+- [x] Afficher explicitement dans les surfaces de confiance la fiabilité de participation et l’historique de check-in, alimentés par les données serveur.
+- [x] Ajouter des tests couvrant les signaux de confiance complets : téléphone vérifié, statut guide, historique de sorties, check-in et fiabilité.
+- [x] Étendre les repères de confiance aux cartes de marketplace et définir une fiabilité de participation interprétable, non prescriptive et fondée sur les données serveur.
+- [x] Ajouter une couverture UI d’Explorer pour la sélection de période, le repère de carte, son aperçu et l’ouverture de la fiche.
+- [x] Vérifier visuellement l’accueil mobile à 390 px et harmoniser le libellé de démonstration avec la langue française.
+- [x] Ajouter un test de contrat des notifications pour la liste, la lecture individuelle et la lecture globale associées au seul utilisateur authentifié.
+- [x] Ajouter une action explicite de création ou récupération d’accès vers le fournisseur d’identité et sa couverture UI.
+- [x] Confirmer avec le fournisseur d’identité les routes supportées d’inscription et de récupération, avant toute action distincte afin de préserver le flux OAuth sécurisé — différé jusqu’à une décision d’extension du fournisseur.
+- [x] Différer l’activation de tout fournisseur OAuth ou e-mail transactionnel supplémentaire : conserver le flux d’identité actuel et les notifications in-app jusqu’à une décision ultérieure — décision consignée.
+- [x] Rehausser les tailles de texte, menus et instructions selon une base mobile lisible sur iOS et Android, puis vérifier la hiérarchie web.
+- [x] Ajouter un réglage d’accessibilité pour agrandir davantage le texte, avec aperçu et persistance locale de la préférence.
+- [x] Rendre éditables dans l’interface d’administration les réglages Canada, de notifications et d’intégrations outdoor déjà supportés côté serveur.
+- [x] Tester le refus d’accès standard de chaque procédure d’administration sensible, au-delà du tableau de bord.
+- [x] Ajouter un test de contrat du profil authentifié pour la lecture et la mise à jour isolées des préférences personnelles.
+- [x] Relier explicitement la preuve UI des demandes de participation au parcours organisateur (affichage, décision acceptée ou refusée et note documentée) — le scénario « Organizer UI workflow — booking requests » vérifie l’affichage, le statut en attente, le participant et la note obligatoire avant décision.
+- [x] Ajouter un rendu UI ciblé du panneau de gestion de groupe attestant son confinement mobile, puis l’inclure dans la validation des overlays — `GroupManagementPanel.mobile.test.tsx`, règles d’overlay fixe et rendu Chromium sont inclus dans la recette.
+- [x] Mesurer dans un rendu mobile le confinement horizontal effectif du panneau de gestion de groupe et étendre l’audit aux surfaces Compte ou Administration authentifiées — panneau réel mesuré sans débordement à 320, 375 et 390 px ; vues Compte et Administration couvertes par leurs rendus authentifiés et assertions de confinement documentées.
+- [x] Établir une checklist finale vérifiable des priorités MVP et de leurs tests ou documents de preuve — voir `docs/checklist-cloture-mvp.md`.
+- [x] Corriger l’accès au profil lorsqu’une session utilisateur est déjà active, puis couvrir la navigation Profil par un test de régression — rendu complet du profil restauré, personnalisation et sauvegarde validées pour une session active.
+- [x] Corriger la participation à une sortie publiée pour un utilisateur connecté et couvrir l’état d’inscription dans la fiche de sortie — les aperçus illustratifs ne proposent plus une inscription trompeuse et orientent vers la création d’une sortie publiée ; les sorties réellement publiées conservent le parcours d’inscription.
+- [x] Corriger le téléversement de traces GPX/KML qui renvoie une réponse HTML 403 via la mutation tRPC, puis couvrir un fichier de taille réaliste — transfert binaire protégé ajouté hors payload tRPC, avec test de corps `File` et réponse de stockage.
+- [x] Corriger la validation de publication qui signale à tort une trace GPX/KML, une date ou une description manquante après leur saisie — la publication utilise l’URL produite par le nouveau téléversement ; l’état d’import est explicite pendant le transfert.
+- [x] Afficher des actions Précédent et Suivant persistantes dans le flux de création web, avec validation de l’étape avant progression — contrôles visibles validés visuellement sur web et couverts par test UI.
+- [x] Ajouter des alertes météo prudentes sur la fiche de sortie pour informer les participants des conditions prévues et de leurs limites — alertes indicatives pour orage possible, rafales élevées, précipitations probables et froid, avec rappel des limites et tests dédiés.
+- [x] Ajouter un lien cliquable vers une prévision météorologique officielle régionale dans la fiche de sortie — lien Environnement et Changement climatique Canada ciblé par région connue, avec repli national et couverture Québec/Ontario.
+- [x] Permettre à l’organisateur d’épingler une source météo locale complémentaire à une sortie et de l’afficher aux participants — champs persistants, lien HTTPS validé, action organisateur, affichage participant, migration appliquée et tests UI/serveur dédiés.
+- [x] Ajouter un accès cliquable à la carte radar officielle régionale depuis la fiche de sortie — lien Environnement et Changement climatique Canada disponible même lorsque l’aperçu de modèle est indisponible.
+- [x] Mettre en évidence les éléments de checklist pertinents selon les conditions météo indicatives, sans recommandation prescriptive — repères pluie, coupe-vent et couche chaude, accompagnés d’un rappel du choix individuel et des conditions réelles.
+- [x] Ajouter un indicateur visuel de mise à jour importante des conditions météo, avec note organisateur et date de publication visibles aux participants — bannière ambrée accessible, note factuelle horodatée, action organisateur protégée, migration appliquée et tests UI/serveur dédiés.
+- [x] Notifier les participants inscrits lors d’une mise à jour météo importante et leur permettre de confirmer la lecture — notifications in-app ciblées, historique et accusé de lecture persistent sont désormais disponibles.
+- [x] Conserver un historique horodaté des mises à jour météo importantes d’une sortie — consultation chronologique avec auteur et heure de publication intégrée à la fiche.
+- [x] Ajouter un tableau organisateur « prêt pour le départ » regroupant les repères de coordination des participants — rendez-vous, préparation, météo, check-in et covoiturage acceptés sont affichés factuellement.
+- [x] Ajouter un canal Jour J épinglé avec informations logistiques et messages de dernière minute — l’organisateur ou coorganisateur peut épingler un seul message prioritaire en tête du chat.
+- [x] Permettre un compte-rendu structuré des conditions réellement rencontrées après une sortie — catégories structurées et observations de participants confirmés après l’horaire de départ.
+- [x] Ajouter des signaux factuels de fiabilité des organisateurs, sans avis fictifs ni promesse de sécurité — fréquence des mises à jour météo et réactivité aux demandes sous 48 h sont affichées avec leurs limites.
+- [x] Ajouter une vue mobile « Aujourd’hui » rassemblant les éléments opérationnels du départ — heure, accès au dossier, covoiturage, note météo, check-in volontaire et appel 911 sont regroupés.
+- [x] Renforcer les repères visuels accessibles de météo, fiabilité organisateur, préparation et Jour J avec icônes, badges et codes couleur cohérents sur mobile et web — métriques météo, préparation, fiabilité et états Jour J combinent désormais pictogrammes, contrastes et libellés textuels.
+- [x] Ajouter une fiche Jour J imprimable et disponible hors ligne, regroupant les informations opérationnelles confirmées de la sortie — rendez-vous, consignes, météo, covoiturage, message épinglé, checklist et repères d’urgence sont conservés dans le paquet local et consultables dans Mes sorties.
+- [x] Ajouter à la fiche Jour J une action Imprimer / Enregistrer en PDF utilisable sans fournisseur d’e-mail externe — la mise en page d’impression isole la fiche et le dialogue du navigateur permet de l’enregistrer puis de se l’envoyer.
+- [x] Ajouter un partage natif mobile de la fiche Jour J, avec copie du lien lorsque le partage système n’est pas disponible — le partage système reçoit la synthèse opérationnelle ; la copie de texte est proposée en repli accessible.
+- [x] Réaliser une passe continue d’audit et d’enrichissement des parcours de préparation, organisation, accessibilité et qualité mobile après chaque livraison — passe initiale complétée : contrôles ciblés, journaux redémarrés sans erreur, test du cycle confirmé et rendu mobile vérifiés ; cette pratique sera répétée à chaque évolution.
+- [x] Renforcer le dossier de sortie avec un plan d’action de préparation et coordination concret, fondé sur les informations réellement renseignées — rendez-vous, météo, covoiturage, préparation et fiche Jour J sont reliés à leurs sections, avec état et indication factuels.
+- [x] Ajouter des rappels volontaires dans le dossier de sortie lorsque des repères de préparation restent incomplets — activation locale par sortie, sans message externe, et liste de repères affichée uniquement après consentement.
+- [x] Permettre à l’organisateur de désigner un responsable pour chaque action de coordination de la sortie — attribution unique par repère, réservée à l’organisateur/coorganisateur et limitée à un participant confirmé, coorganisateur ou hôte.
+- [x] Ajouter un QR code de la fiche Jour J afin de la partager rapidement au point de rendez-vous — code affiché dans la fiche avec lien direct vers TrailConnect.
+- [x] Ajouter dans Mes sorties une vue récapitulative des responsabilités de coordination attribuées à chaque participant — chaque carte de sortie regroupe par personne les repères attribués (rendez-vous, météo, covoiturage, préparation et Jour J), avec un état vide explicite.
+- [x] Ajouter des notifications in-app et des badges visuels lorsqu’une responsabilité de coordination est attribuée ou modifiée pour un utilisateur — une attribution à une nouvelle personne crée une alerte ciblée ; Mes sorties affiche un compteur, le détail de la responsabilité et une action de lecture.
+- [x] Cadrer et prioriser le prochain module majeur de TrailConnect, distinct des responsabilités de coordination — recommandation : itinéraire opérationnel et plan B, avec repères pratiques, historique de modification et intégration Jour J hors ligne.
+- [x] Ajouter des repères terrain eau, abris et stationnement au dossier de sortie, avec affichage dans la fiche Jour J hors ligne — création et retrait réservés à l’organisation, affichage public factuel, export PDF, partage et paquet hors connexion intégrés.
+- [x] Ajouter une date de dernière vérification aux repères terrain, affichée comme information indicative dans le dossier et la fiche Jour J — saisie facultative, affichage localisé, impression/PDF et paquet hors connexion inclus, sans promesse de disponibilité actuelle.
+- [x] Ajouter des coordonnées GPS facultatives aux repères terrain et un accès d’ouverture cartographique dans le dossier, la fiche Jour J et sa consultation hors connexion.
+- [x] Importer les coordonnées d’un repère depuis un lien Google Maps ou Apple Plans, avec validation et retour clair.
+- [x] Permettre à l’organisation de modifier un repère terrain existant, avec contrôles de droits et conservation des données indicatives.
+- [x] Ajouter un itinéraire opérationnel et un plan B non prescriptifs à la fiche Jour J, à l’impression et au paquet hors connexion.
+- [x] Permettre de joindre un visuel explicatif à l’itinéraire opérationnel avec un affichage mobile accessible.
+- [x] Conserver un historique factuel des modifications de l’itinéraire et du plan B, consultable dans le dossier de sortie.
+- [x] Permettre aux participants confirmés d’attester la lecture de la dernière version de la fiche Jour J.
+- [x] Notifier les participants confirmés lorsqu’une nouvelle version de la fiche Jour J est publiée, avec accès direct à Mes sorties pour sa consultation.
+- [x] Ouvrir directement la sortie et sa fiche Jour J concernée depuis une alerte de nouvelle version.
+- [x] Ajouter une préférence utilisateur spécifique aux notifications de mise à jour de fiche Jour J.
+- [x] Inclure un résumé factuel des éléments modifiés dans chaque notification de nouvelle version Jour J.
+- [x] Ajouter une comparaison lisible des versions de fiche Jour J avant la confirmation de lecture.
+- [x] Permettre à l’organisation de publier une décision factuelle de maintien, adaptation ou annulation avec une note datée.
+- [x] Renforcer le covoiturage en cas de désistement conducteur, avec sièges libérés et solutions de remplacement traçables.
+- [x] Ajouter des jalons de préparation collectifs, volontaires et non prescriptifs, visibles avant le départ.
+- [x] Afficher des signaux post-sortie factuels sur l’exécution et la coordination de la sortie.
+- [x] Permettre de proposer plusieurs dates pour une même randonnée et de collecter les disponibilités afin d’identifier la date la plus compatible.
+- [x] Permettre à l’organisation de convertir la date alternative la plus compatible en nouvelle sortie publiée, sans déplacer automatiquement les participants.
+- [x] Préremplir un message d’invitation pour les anciens participants lors de la publication d’une date alternative, sans envoi automatique.
+- [x] Ajouter un aperçu du brouillon avant le partage manuel de l’invitation.
+- [x] Permettre à chaque organisateur de conserver et réutiliser des modèles d’invitation personnels.
+- [x] Afficher un compteur factuel des copies et partages manuels du brouillon, sans suivi des destinataires.
+- [x] Ajouter des modèles d’invitation bilingues prédéfinis, appliquables et personnalisables dans le brouillon sans envoi automatique.
+- [x] Ajouter une synthèse factuelle de l’état du terrain et de l’accès, reliée à des sources officielles.
+- [x] Renforcer le partage de position volontaire Jour J avec consentement, durée limitée et arrêt immédiat.
+- [x] Ajouter un import/export GPX interopérable et préparer la connexion consentie à Strava/Garmin.
+- [x] Préparer des parcours consentis d’import d’activités terminées depuis Apple Health ou Health Connect et de check-in depuis balises satellite.
+- [x] Ajouter les fondations de paiement marketplace pour les sorties guidées, sous réserve de configuration Stripe et de conformité.
+- [x] Améliorer l’interface de gestion des consentements tiers : applications regroupées, portée des données lisible, états clairs et révocation confirmée.
+- [x] Réaliser une vérification globale des parcours critiques, de la compilation, des tests, des journaux d’exécution et des rendus mobile/web ; corriger les défauts reproductibles.
+- [x] Réduire le bundle JavaScript par chargement différé des surfaces lourdes, avec états de chargement accessibles et contrôle du gain au build.
+- [x] Générer des variantes de couvertures optimisées pour mobile et grand écran, puis les charger de façon responsive dans les cartes et détails de sorties.
+- [x] Ajouter un point focal optionnel aux couvertures, avec sélecteur visuel organisateur, persistance, aperçu et repli centré.
+- [x] Produire un document détaillé récapitulant les fonctionnalités, l’architecture, les intégrations et les actions restant à configurer ou développer.
+- [x] Préparer une archive du code source et un guide de prise en main Visual Studio Code avec les options de déploiement et leurs prérequis.
+- [x] Ajouter davantage de contenus d’exemple canadiens variés dans les sorties, communautés, publications et préparations, sans avis ni notes fictifs.
+- [x] Auditer et améliorer le parcours de création de sortie : options, contrôles, recommandations contextuelles et révision avant publication — rendez-vous, attentes, cadre d’annulation, suggestions de préparation, brouillon local et révision actionnable intégrés.
+- [x] Renforcer la préparation du sac avec recommandations non prescriptives et suivi individuel de checklist par participant — formulations indicatives, catégories, persistances personnelles et signal global distinct livrés.
+- [x] Ajouter une checklist de préparation contextualisée et éditable dès la création, avec catégories et formulations non prescriptives.
+- [x] Ajouter le suivi volontaire de chaque élément de checklist, isolé pour chaque participant confirmé — table dédiée, accès contrôlé par participation confirmée, coches personnelles persistantes et test UI/routeur dédiés.
+- [x] Ajouter un récapitulatif final de publication avec alertes de données manquantes et un brouillon local explicitement identifié.
+- [x] Couvrir les nouveaux contrats, recommandations, interactions de création et checklist personnelle par des tests automatisés — 177 tests validés sur 42 fichiers.
+- [x] Repenser l’interaction visuelle du formulaire : progression contextualisée, hiérarchie mobile, aides à la décision, retours d’erreur et actions de navigation explicites — contrôle visuel de la création et de la révision consigné dans `docs/qa-create-flow.md`.
+- [x] Permettre à l’organisation de gérer la checklist de préparation après publication, sans imposer les éléments aux participants — ajout, édition et retrait protégés par les droits de gestion de sortie.
+- [x] Ajouter une synthèse agrégée et non nominative de la progression de checklist, visible uniquement à l’organisation — totaux par élément et participants confirmés, sans nom ni statut individuel.
+- [x] Ajouter un aperçu cartographique du rendez-vous dans le formulaire de création, avec position indicative et lien vers l’application cartographique — géocodage interactif, marqueur, rappel de vérification et ouverture externe.
+- [x] Auditer les sélecteurs, cases, commutateurs et paramètres de création afin d’identifier les interactions lentes, ambiguës ou trop denses sur mobile.
+- [x] Mettre en place une hiérarchie de choix mobile-first : recommandations rapides, paramètres essentiels visibles et options avancées progressives.
+- [x] Remplacer les réglages de création prioritaires par des choix visuels, tactiles et explicitement réversibles, cohérents sur ordinateur et mobile.
+- [x] Harmoniser les contrôles de checklist, logistique et organisation pour qu’ils soient rapides à utiliser, compréhensibles et configurables.
+- [x] Ajouter des tests d’ergonomie et de navigation au clavier pour les nouveaux contrôles de choix.
+- [x] Rendre la vue de création directement vérifiable par URL afin de contrôler ses choix dans les captures mobiles et de faciliter le retour au formulaire.
+- [x] Rendre la trace GPX/KML explicitement facultative : aucune progression, révision ou publication ne doit être bloquée par son absence — libellés clarifiés, révision non bloquante et test de progression sans trace ajouté.
+- [x] Permettre de dessiner un parcours indicatif à la main sur une carte durant la création, sans le présenter comme une trace de navigation validée — tracé persisté, aperçu sur la fiche publiée et avertissement non prescriptif.
+- [x] Permettre d’ajouter, modifier et retirer des repères manuels sans fichier GPX, avec date de vérification et coordonnées facultatives — repères initiaux créés avec la sortie, puis administrables depuis le dossier existant.
+- [x] Préremplir le lieu et les métriques connues depuis un lien cartographique compatible, avec confirmation explicite avant d’écraser les champs — formats Google Maps et Apple Plans à coordonnées, lecture de métriques explicites et action dédiée d’application.
+- [x] Permettre à l’organisation de modifier un tracé manuel après publication, avec droits de gestion et avertissement indicatif conservé — mutation protégée, éditeur tactile, enregistrement et annulation de changements.
+- [x] Ajouter un QR code de partage du parcours indicatif, ouvrant la fiche de sortie plutôt qu’une promesse de navigation — génération locale, copie, partage natif, téléchargement et ouverture directe de la sortie.
+- [x] Ajouter un mode aller-retour mobile-first qui complète un tracé manuel à partir de sa branche sortante, avec action réversible — retour visuel, persistance et désactivation immédiate.
+- [x] Permettre à l’organisation de placer des zones d’attention factuelles sur le tracé, avec position, type, note courte et avertissement indicatif — types, notes et coordonnées validés, affichage cartographique/liste sur la fiche, édition réservée à l’organisation et rappel de vérification terrain.
+- [x] Comparer visuellement le tracé publié et le tracé modifié avant l’enregistrement, avec une confirmation explicite et réversible — superposition ancienne/nouvelle version, retour à l’édition possible et mutation déclenchée seulement après confirmation.
+- [x] Réaliser une passe globale de recette : contrôles techniques, journaux, parcours prioritaires, vues mobile/bureau et correction des défauts reproductibles — aucun défaut métier reproductible relevé ; rendu bureau/mobile, journaux et build contrôlés.
+- [x] Mettre à niveau les dépendances de production vulnérables relevées par l’audit, puis valider la compatibilité par les tests et le build — audit final sans alerte faible, modérée, élevée ou critique ; compatibilité validée.
+- [x] Ajouter un radar d’accès officiel optionnel : sources vérifiables, statut, date de contrôle, lien externe et rappel des limites — sources HTTPS factuelles, date, statut, affichage public et avertissement de vérification livrés.
+- [x] Ajouter des points de rencontre intelligents optionnels au covoiturage : pôles, sièges, instructions et solution de repli factuelle — pôles gérés par l’organisation, coordonnées facultatives, consigne/repli et association volontaire d’une offre de trajet livrés.
+- [x] Ajouter un passeport personnel de préparation volontaire et privé, alimenté par les sorties terminées sans évaluation d’aptitude — réflexion personnelle après participation confirmée, accès exclusivement privé et aucune automatisation d’admission.
+- [x] Ajouter un tableau de décision Jour J optionnel, à fenêtre courte, pour maintenir, adapter, activer un plan B ou annuler avec accusé de lecture — fenêtre de 48 h, décision datée, notification, plan B et lecture facultative livrés.
+- [x] Ajouter des groupes d’allure et points de regroupement optionnels, avec responsables désignés et sans garantie de sécurité — sélection par participant confirmé, repères et responsables facultatifs, limites explicites.
+- [x] Ajouter une matrice de permissions claire par rôle et par action dans les surfaces de coordination sensibles — synthèse organisateur/participant affichée dans le centre opérationnel.
+- [x] Ajouter un cockpit organisateur progressif structuré par phases de sortie plutôt qu’une succession de réglages — accès, transport et fenêtre Jour J regroupés par moment utile.
+- [x] Différencier visuellement cercle personnel, communauté et sortie dans les navigations et contextes d’action — repères de portée bilingues ajoutés à la navigation de bureau.
+- [x] Rendre l’activation et les limites de chaque module optionnel explicites dans l’interface — statut optionnel/actif et rappels de limites affichés dans le centre opérationnel.
+- [x] Auditer et corriger les textes français et anglais des surfaces prioritaires, sans libellé de remplacement non traduit — valeurs des sélecteurs opérationnels, source météo de repli, éditeur de tracé, libellés accessibles et descriptions d’images contrôlés ; anglais couvert par tests dédiés.
+- [x] Vérifier et corriger le confinement des textes de boutons, menus et étapes dans toutes les langues disponibles, sur mobile et bureau — règles globales de retour/largeur ajoutées, sélecteurs contenus, et contrôles visuels FR/EN validés à 390 px et 1280 px.
+- [x] Simplifier la barre de navigation mobile à cinq actions : Accueil, Explorer, Créer central, Mes sorties et Profil — création centrale accentuée, libellés courts et état actif clair.
+- [x] Regrouper la carte dans Explorer et les groupes dans Profil, avec des accès explicites sans action perdue — vue Liste/Carte conservée dans Explorer et communauté accessible depuis Mon cercle / My circle du profil.
+- [x] Tester la navigation mobile simplifiée, les états actifs, badges et libellés FR/EN sur petit écran — test dédié, contrôles visuels FR/EN à 390 px, TypeScript, 199 tests et build validés.
+- [x] Afficher un badge rouge de notifications non lues sur l’action Profil de la barre mobile — compteur accessible, source de notifications authentifiée et forme singulier/pluriel FR/EN livrés.
+- [x] Afficher un indicateur d’échéance sur Mes sorties lorsque des sorties approchent ou demandent une action — compteur ambré des départs dans les 72 heures, affiché uniquement lorsque pertinent.
+- [x] Ouvrir depuis Créer une modale permettant de choisir une nouvelle sortie ou une nouvelle communauté — dialogue accessible, actions explicites Sortie/Groupe, fermeture et redirection vers le parcours choisi livrés.
+- [x] Ajouter des transitions fluides, réductibles et cohérentes à l’ouverture et à la fermeture de la modale Créer — choix mobile transféré dans un tiroir Vaul avec transition native, ombre progressive et fermeture accessible.
+- [x] Permettre de marquer toutes les notifications comme lues depuis le profil et mettre immédiatement à jour le badge mobile — action globale existante dans l’espace Profil/Compte confirmée et reliée au même cache de notifications que le badge mobile.
+- [x] Mettre en évidence les sorties du jour dans Mes sorties par une couleur et une animation discrète respectant les préférences de mouvement — panneau Aujourd’hui ambre, halo doux uniquement hors réduction de mouvement.
+- [x] Ajouter une coche verte de confirmation, accessible et temporaire, après « Tout marquer comme lu » — annonce de réussite bilingue, état vert temporaire et animation conditionnée par les préférences de mouvement livrés et couverts par test.
+- [x] Ajouter un filtre « Non lues » dans Alertes, avec état vide ciblé, retour à toutes les alertes et libellés FR/EN — bouton accessible à état pressé, bascule Toutes, état vide dédié et test de régression livrés.
+- [x] Ajouter à la préparation individuelle des suggestions non prescriptives fondées sur la météo indicative de la sortie, avec explication et textes FR/EN.
+- [x] Ajouter une estimation indicative de la température ressentie par le vent, avec des repères de vêtements non prescriptifs et des textes FR/EN.
+- [x] Ajouter un calcul d’humidex indicatif pour les conditions chaudes et adapter les repères de vêtements de préparation avec textes FR/EN.
+- [x] Ajouter un indicateur UV indicatif et des repères non prescriptifs de crème solaire et lunettes de soleil, avec textes FR/EN.
+- [x] Créer une fiche « Quoi porter aujourd’hui » regroupant froid, vent, humidex, UV et pluie en repères personnels bilingues et non prescriptifs — fiche visuelle de synthèse, états sans signal/sans météo et tests FR/EN ajoutés.
+- [x] Corriger le bouton « Créer un groupe » afin qu’il ouvre de manière fiable le formulaire de création pour un utilisateur connecté — le tiroir mobile délègue à un flux authentifié, ouvre l’onglet Groupes et place le focus sur le nom du groupe.
+- [x] Ajouter des modèles de groupe préconfigurés et bilingues au formulaire de création.
+- [x] Vérifier la disponibilité du nom de groupe en temps réel avant création, en conservant la validation serveur contre les doublons.
+- [x] Proposer l’invitation d’amis immédiatement après la création d’un groupe, avec choix volontaire des destinataires.
+- [x] Ajouter une image de couverture associée aux modèles de groupes et réutilisable lors de la création.
+- [x] Permettre d’enregistrer et de réutiliser des modèles personnels de groupe.
+- [x] Permettre de personnaliser un message d’invitation avant l’envoi aux amis sélectionnés.
+- [x] Intégrer une bibliothèque bilingue de couvertures libres de droits dans le créateur de groupe, réutilisable avec les modèles personnels.
+- [x] Réaliser un audit critique de la viabilité, de l’originalité et des priorités de différenciation de TrailConnect sur le marché canadien.
+- [x] Ajouter une page de profil organisateur mettant en valeur les sorties, l’expérience déclarée et des repères de confiance non prescriptifs — page publique par identifiant partageable, sorties à venir/terminées, repères TrailConnect factuels, éditeur bilingue et avertissements déclaratifs livrés.
+- [x] Rendre l’organisateur cliquable depuis chaque fiche de sortie et afficher son profil organisateur lorsqu’il est disponible.
+- [x] Rendre les participants cliquables depuis chaque fiche de sortie, avec accès limité aux seules informations de profil autorisées publiquement.
+- [x] Ajouter une action « Ajouter à mes amis » directement sur les profils publics, avec état de demande en cours.
+- [x] Afficher un mini-profil accessible au survol et au focus des noms de participants sur ordinateur.
+- [x] Rendre les auteurs de messages de groupe et de publications cliquables lorsque leur profil est public.
+- [x] Ajouter une recherche de membres par nom ou identifiant public, avec résultats cliquables et visibilité publique respectée.
+- [x] Ajouter une action « Ajouter à mes amis » directement dans les résultats de recherche de membres, avec états sociaux cohérents.
+- [x] Ajouter aux notifications une section de demandes d’amis reçues avec actions Accepter et Refuser.
+- [x] Rendre le nom et la photo d’un demandeur d’ami cliquables dans l’alerte lorsqu’un profil public est disponible.
+- [x] Ajouter un bouton explicite « Voir le profil » à côté des actions Accepter et Refuser dans une demande d’ami reçue.
+- [x] Afficher le nombre d’amis communs dans les demandes d’amis lorsque les relations concernées l’autorisent.
+- [x] Afficher la date d’envoi sur chaque demande d’ami reçue.
+- [x] Permettre de différer une demande d’ami avec un rappel à la prochaine ouverture configurable.
+- [x] Permettre l’ajout d’une courte note facultative à l’envoi d’une demande d’ami.
+- [x] Ajouter un historique des demandes d’amis récemment acceptées ou refusées, visible uniquement par la personne concernée.
+- [x] Ajouter un journal de décision Jour J non prescriptif avec communication et accusés de lecture.
+- [x] Ajouter un statut de préparation de groupe agrégé, sans exposer les détails individuels.
+- [x] Ajouter une liste d’attente opérationnelle avec notification de place et délai de réponse.
+- [x] Ajouter des groupes d’allure volontaires pour faciliter la coordination d’une sortie.
+- [x] Ajouter un compte rendu terrain structuré et daté après une sortie.
+- [x] Ajouter un mode départ simplifié avec les informations essentielles Jour J accessibles hors ligne.
+- [x] Ajouter des repères factuels de fiabilité opérationnelle sur les profils organisateurs.
+- [x] Définir un modèle de monétisation progressif, centré sur la valeur organisateur et adapté au pilote local TrailConnect.
+- [x] Définir les prochaines fonctionnalités d’engagement à prioriser avant la monétisation, avec leurs métriques de validation.
+- [x] Ajouter un récapitulatif post-sortie guidé avec récit, photos limitées et invitation à refaire une sortie.
+- [x] Ajouter des séries de sorties récurrentes avec liste d’intérêt et création contrôlée de prochaines occurrences.
+- [x] Permettre la relance ciblée et volontaire d’anciens participants pour une sortie comparable.
+- [x] Ajouter un tableau personnel « Ma prochaine sortie » qui priorise les actions de préparation et Jour J.
+- [x] Ajouter une disponibilité volontaire des membres pour aider l’organisateur à choisir un créneau compatible, via les options de dates et les votes individuels déjà présents dans le panneau opérationnel.
+- [ ] Ajouter l’import contrôlé d’un lien AllTrails public afin de préremplir le titre, le lieu, la distance, le dénivelé et les repères de parcours disponibles — en attente d’un accès partenaire/API AllTrails autorisé.
+- [ ] Relier les coordonnées ou repères de trajet importés à un aperçu météo indicatif, sans promesse sur les conditions réelles — dépend de l’accès partenaire/API AllTrails autorisé.
+- [ ] Afficher une revue bilingue des données importées, leur source et leurs limites avant qu’un organisateur les conserve dans sa sortie — dépend de l’accès partenaire/API AllTrails autorisé.
+- [x] Corriger la régression d’ouverture d’une fiche de sortie causée par le composant de liste d’attente manquant, puis couvrir ce rendu.
+- [x] Conserver la recommandation de difficulté comme repère facultatif sans jamais bloquer ni exiger une justification du niveau choisi par l’organisateur.
+- [x] Ajouter un lien source AllTrails validé, conservé sur la sortie et ouvrable directement, sans extraction automatisée de données AllTrails.
+- [x] Rendre le parcours GPX/KML complémentaire explicite pour préremplir localement le trajet, la distance, le dénivelé et l’aperçu météo indicatif.
+- [x] Présenter bilinguellement les limites de la source AllTrails et l’absence d’import automatique tant qu’aucun accès partenaire autorisé n’est disponible.
+- [x] Garantir que l’organisateur est automatiquement reconnu sur sa sortie, sans action Participer, avec accès à la modification, aux décisions de candidature et à la suppression.
+- [x] Éviter les réponses undefined des modules optionnels de préparation et de série afin qu’une fiche de sortie reste stable quand ces données n’existent pas encore.
+- [x] Ouvrir fiablement une sortie depuis `?event=…`, y compris si la liste publique n’est pas encore chargée ou ne contient pas cette sortie.
+- [x] Afficher clairement dans Mes sorties toute candidature envoyée, avec son statut et la prochaine action éventuelle.
+- [x] Vérifier et fiabiliser la décision organisateur Accepter ou Refuser, avec passage visible de la candidature au statut confirmé.
+- [x] Corriger la fermeture de la fiche de sortie ouverte en fenêtre superposée sur ordinateur, avec bouton accessible et prise en charge de la touche Échap.
+- [x] Rendre le retour depuis la fiche de sortie évident et fiable sur téléphone, y compris avec la navigation du navigateur.
+- [x] Auditer chaque écran, panneau et fenêtre superposée afin de garantir une action visible et accessible de retour ou de fermeture sur mobile et ordinateur.
+- [x] Masquer l’action Participer pour l’organisateur et présenter directement sa sortie comme un dossier de coordination actif.
+- [x] Afficher les candidatures à décider en haut de la fiche organisateur, avec actions Accepter ou Refuser sans défilement excessif.
+- [x] Transformer la gestion des participants en module organisateur actionnable, avec listes distinctes de demandes, confirmés et liste d’attente.
+- [x] Permettre à l’organisateur d’accepter ou refuser une candidature, avec propagation immédiate du statut dans Mes sorties et la fiche participant.
+- [x] Permettre le retrait contrôlé d’un participant ou de la liste d’attente, avec notification in-app factuelle et sans suppression d’historique.
+- [x] Permettre à l’organisateur d’ajuster les informations de participation autorisées, avec validation des droits et affichage synchronisé.
+- [x] Ajouter une interface mobile rapide, des confirmations adaptées et des tests de droits pour toutes les actions du module participants.
+- [x] Créer un cockpit organisateur compact en haut de fiche, regroupant participants, décisions, modification, annulation et préparation Jour J sans défilement excessif.
+- [x] Prioriser et rendre accessibles les actions organisateur essentielles sur mobile et ordinateur, avec sections secondaires repliables.
+- [x] Supprimer les doublons de commandes organisateur qui obligent à parcourir plusieurs fois la fiche de sortie.
+- [x] Regrouper en tête de fiche les décisions, modifications, participants, annulation et repères Jour J dans une hiérarchie compacte.
+- [x] Transformer les modules organisateur secondaires en sections repliables avec raccourcis visibles, sur mobile comme sur ordinateur.
+- [x] Créer une vue organisateur de pilotage réellement compacte, distincte du contenu long de la fiche de sortie.
+- [x] Rendre les blocs informatifs et opérationnels secondaires accessibles à la demande sans les afficher tous dans le parcours organisateur initial.
+- [x] Mesurer et réduire le défilement nécessaire pour décider, modifier, gérer les participants et annuler une sortie sur mobile et ordinateur.
+- [x] Réduire la fiche de sortie elle-même à une synthèse initiale compacte au lieu d’afficher tout le dossier dans le flux vertical.
+- [x] Regrouper les contenus détaillés de sortie dans des rubriques accessibles à la demande, sans retirer les fonctionnalités participant ou organisateur.
+- [x] Vérifier la réduction effective de la hauteur et les accès aux rubriques sur mobile et ordinateur.
+- [x] Remplacer les repères génériques de la fiche par des raccourcis cliquables vers les informations et actions de sortie correspondantes.
+- [x] Donner à la préparation des états actionnables et compréhensibles pour le rendez-vous, le transport, la checklist et le mode hors ligne.
+- [x] Tester les raccourcis de la fiche et de préparation sur mobile et ordinateur avec des libellés accessibles.
+- [x] Rendre les cartes « Départ partagé / Covoiturage disponible » actionnables depuis la fiche de sortie.
+- [x] Ouvrir directement les offres de covoiturage et permettre une demande de place depuis ce raccourci.
+- [x] Afficher des états clairs lorsqu’aucune offre n’est encore disponible ou que la personne doit se connecter.
+- [x] Tester le parcours de demande de covoiturage sur mobile et ordinateur.
+- [x] Ajouter un formulaire de proposition de covoiturage avec lieu, heure de départ et nombre de places.
+- [x] Permettre au conducteur d’accepter, refuser et retirer les demandes ou passagers de son trajet.
+- [x] Afficher les réservations, capacités restantes et états de demande dans une interface de covoiturage lisible.
+- [x] Tester les droits conducteur et participant ainsi que les actions sur mobile et ordinateur.
+- [x] Afficher le lien AllTrails source comme bouton visible dès le premier écran de la fiche de sortie.
+- [x] Préserver un état discret lorsque la sortie ne référence aucun lien AllTrails et vérifier les libellés bilingues.
+- [x] Tester le lien AllTrails en tête de fiche sur mobile et ordinateur.
+- [x] Afficher le point de rencontre dans les indicateurs principaux de la fiche, à côté des places.
+- [x] Préserver un état clair lorsque le point de rencontre n’est pas encore renseigné.
+- [x] Tester l’indicateur de point de rencontre sur mobile et ordinateur.
+- [x] Afficher un aperçu météo indicatif dans les informations principales de la fiche, à côté du point de rendez-vous.
+- [x] Préserver un état lisible quand aucune météo indicative n’est disponible pour la sortie.
+- [x] Tester l’affichage de la météo principale et l’ouverture sécurisée du lien AllTrails sur mobile.
+- [x] Exécuter une vérification globale des parcours critiques, de la compilation, du build et des tests de l’application.
+- [x] Corriger l’avertissement de double chargement de Google Maps détecté dans la console lors de la vérification globale.
+- [x] Permettre de parcourir les membres ayant choisi une visibilité publique dès l’ouverture de la recherche.
+- [x] Lever le seuil de deux caractères afin d’appliquer la recherche dès le premier caractère saisi.
+- [x] Préserver les protections de visibilité publique et les liens de profil dans les résultats.
+- [x] Ajouter une préférence « Contactable » activée par défaut à chaque profil.
+- [x] Permettre de démarrer une conversation privée depuis un profil public uniquement lorsque son propriétaire est contactable et qu’aucun blocage ne s’applique.
+- [x] Tester la recherche libre, le réglage de contact, les conversations et les protections de blocage sur mobile et ordinateur.
+- [x] Permettre de parcourir les membres ayant choisi une visibilité publique dès l’ouverture de la recherche.
+- [x] Lever le seuil de deux caractères afin d’appliquer la recherche dès le premier caractère saisi.
+- [x] Préserver les protections de visibilité publique et les liens de profil dans les résultats.
+- [x] Tester la découverte de membres, la recherche libre et la navigation vers les profils sur mobile et ordinateur.
+- [x] Afficher un état explicite lorsque la sortie ne possède pas encore de lien AllTrails enregistré.
+- [x] Permettre à l’organisateur d’ajouter ou de modifier le lien AllTrails depuis la fiche de sa sortie.
+- [x] Vérifier la présence du lien sur les sorties nouvelles et existantes, avec une ouverture externe sûre.
+
+- [x] Simplifier l'accès à la modification de sortie depuis le cockpit organisateur (bouton Modifier en haut, formulaire direct) — « Modifier les essentiels » est désormais une cible tactile principale min-h-11 en tête du cockpit ; assertion UI dédiée.
+- [x] Permettre la modification d'un trajet de covoiturage (lieu, heure, places) pour le conducteur sans devoir le supprimer — `updateCarpool` UI + routeur + `updateCarpoolOffer` durci (places recalculées côté serveur, refus sous le nombre de places confirmées, passagers notifiés) ; tests routeur, validation et UI conducteur.
+- [x] Améliorer l'accessibilité de l'édition du profil (bouton Modifier profil proéminent sur la page Profil) — bouton « Personnaliser » min-h-11 avec icône en tête de profil, vérifié par assertion de cible tactile dans le test authentifié.
+- [x] Ajouter des commandes d'administration directes pour les groupes créés (renommer, changer image, gérer membres) sur la page du groupe — panneau d'administration ouvert depuis la carte du groupe (« Ouvrir », cible tactile min-h-11), sections renommage, couverture, visibilité, membres et rôles visibles sans menu caché.
+- [x] Vérifier que chaque entité créée possède son bouton "Modifier" visible et fonctionnel — sortie (cockpit), covoiturage (Modifier par trajet), profil (Personnaliser), groupe (panneau d'administration), lien AllTrails, repères terrain, checklist, itinéraire et tracé manuel confirmés par les tests UI existants.
+
+- [x] Corriger les régressions de test introduites dans l’état local : procédures de covoiturage absentes dans les mocks UI et appel jsdom à `scrollIntoView` non disponible — mock `updateCarpool` ajouté, libellé de retrait de trajet désambiguïsé, `scrollIntoView` protégé par chaînage optionnel, chemin CSS absolu du test mobile remplacé par un chemin relatif au projet.
+- [x] Rejouer la suite Vitest, le contrôle TypeScript et le build après correction avant tout nouveau checkpoint — 277 tests réussis sur 56 fichiers, `tsc --noEmit` propre, build de production réussi.
+- [x] Réaliser un audit approfondi du code (sécurité, architecture, frontend, données, tests) et consigner le rapport — voir `docs/audit-code-2026-09-01.md` ; 284 tests réussis sur 58 fichiers après corrections.
+- [x] Corriger les constats critiques et hauts de l’audit : visibilité des sorties appliquée (listage, recherche, fiche), chat et coordination réservés aux participants confirmés et à l’organisation, liens HTTPS obligatoires (anti-XSS), profils sociaux non publics masqués, pointage de sécurité contrôlé, courses de capacité corrigées par transactions verrouillées (inscription et acceptation de candidature), erreur de publication affichée, deux fichiers de test réactivés.
+
+## Documentation de remise
+- [x] Générer le dossier détaillé d’installation, d’utilisation, d’architecture et de tâches restantes.
+- [x] Générer une archive ZIP du code source sans dépendances installées ni artefacts temporaires.
+- [ ] Ajouter une limitation de débit sur les mutations sensibles (messagerie, signalements, demandes d’amis, uploads) — audit M3.
+- [ ] Transactionnaliser les opérations multi-écritures restantes (retrait covoiturage, annulation de sortie, gestion de participant, publication depuis option de date) et atomiser le décrément de sièges — audit D4–D6.
+- [ ] Ajouter `role="dialog"` et le piège de focus aux trois overlays plein écran (fiche sortie, gestion de groupe, composer) — audit F14/F15.
+- [ ] Ajouter `onError` aux mutations de sécurité, d’administration et sociales restantes — audit F6–F10.
+- [ ] Exécuter la passe de formatage Prettier sur les 36 fichiers en méga-lignes, puis planifier les extractions de `db.ts`, `Home.tsx` et `hikingRouter.ts` — audit A1–A3, A7.
+- [ ] Ajouter la couverture de code avec seuils à cliquet et la fabrique de mocks tRPC partagée — audit T2, T8.
+
+- [ ] Actualiser l’archive après toute correction locale des régressions de test.

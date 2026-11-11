@@ -1,0 +1,1 @@
+ALTER TABLE `eventDateOptions` ADD `publishedEventId` int;

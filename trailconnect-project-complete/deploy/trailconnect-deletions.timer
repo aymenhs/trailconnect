@@ -1,0 +1,11 @@
+[Unit]
+Description=Run the TrailConnect account-deletion sweep daily
+
+[Timer]
+OnCalendar=daily
+# Spread the load and survive a machine that was off at the scheduled time.
+RandomizedDelaySec=1h
+Persistent=true
+
+[Install]
+WantedBy=timers.target

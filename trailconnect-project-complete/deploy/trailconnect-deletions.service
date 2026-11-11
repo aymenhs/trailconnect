@@ -1,0 +1,12 @@
+[Unit]
+Description=TrailConnect — finalise due account deletions
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=trailconnect
+EnvironmentFile=/etc/trailconnect/env
+# Replaces the Manus cron session, which authenticated against their API.
+ExecStart=/usr/bin/curl -fsS --max-time 120 -X POST \
+  -H "Authorization: Bearer ${CRON_SECRET}" \
+  "${APP_URL}/api/scheduled/finalize-account-deletions"

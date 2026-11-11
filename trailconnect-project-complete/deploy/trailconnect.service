@@ -1,0 +1,46 @@
+[Unit]
+Description=TrailConnect
+Documentation=file:///opt/trailconnect/deploy/README.md
+After=network-online.target mysql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=trailconnect
+Group=trailconnect
+WorkingDirectory=/opt/trailconnect
+
+# Mode 640, root:trailconnect: it holds the database password, the JWT secret
+# and the OAuth client secret.
+EnvironmentFile=/etc/trailconnect/env
+
+# Business dates are stored as naive DATETIME, so the process has to run in UTC.
+# Pinning it here — rather than with `timedatectl` — leaves the machine's own
+# timezone alone, which matters when other services share the host. Pair it with
+# `?timezone=Z` at the end of DATABASE_URL so MySQL agrees.
+Environment=TZ=UTC
+
+ExecStart=/usr/bin/node dist/index.js
+Restart=always
+RestartSec=5
+
+# The service only ever needs to write uploads.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/trailconnect
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictNamespaces=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=trailconnect
+
+[Install]
+WantedBy=multi-user.target

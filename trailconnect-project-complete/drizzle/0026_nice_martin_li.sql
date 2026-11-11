@@ -1,0 +1,1 @@
+ALTER TABLE `eventParticipants` ADD `preparationReadyAt` datetime;

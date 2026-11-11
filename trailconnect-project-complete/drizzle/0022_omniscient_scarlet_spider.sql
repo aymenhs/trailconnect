@@ -1,0 +1,1 @@
+ALTER TABLE `siteSettings` ADD `accountDeletionCronTaskUid` varchar(65);

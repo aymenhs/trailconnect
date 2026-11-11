@@ -1,0 +1,11 @@
+[Unit]
+Description=TrailConnect — close finished outings and send departure reminders
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=trailconnect
+EnvironmentFile=/etc/trailconnect/env
+ExecStart=/usr/bin/curl -fsS --max-time 120 -X POST \
+  -H "Authorization: Bearer ${CRON_SECRET}" \
+  "${APP_URL}/api/scheduled/outing-maintenance"

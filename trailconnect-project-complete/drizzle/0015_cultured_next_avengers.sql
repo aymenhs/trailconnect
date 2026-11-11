@@ -1,0 +1,1 @@
+ALTER TABLE `hikerPreferences` ADD `availabilityDays` varchar(120);

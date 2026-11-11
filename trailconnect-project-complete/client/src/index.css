@@ -1,0 +1,169 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --primary: oklch(0.30 0.065 159);
+  --primary-foreground: oklch(0.98 0.008 92);
+  --background: oklch(0.975 0.008 92);
+  --foreground: oklch(0.22 0.025 153);
+  --card: oklch(0.995 0.004 92);
+  --card-foreground: oklch(0.22 0.025 153);
+  --popover: oklch(0.995 0.004 92);
+  --popover-foreground: oklch(0.22 0.025 153);
+  --secondary: oklch(0.94 0.018 122);
+  --secondary-foreground: oklch(0.27 0.04 153);
+  --muted: oklch(0.93 0.014 105);
+  --muted-foreground: oklch(0.47 0.035 148);
+  --accent: oklch(0.92 0.032 116);
+  --accent-foreground: oklch(0.24 0.045 153);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.87 0.022 108);
+  --input: oklch(0.87 0.022 108);
+  --ring: oklch(0.52 0.10 157);
+  --radius: 1rem;
+}
+
+/* Choix volontaire dans les réglages d’accessibilité. La valeur porte sur les rem
+   afin d’agrandir aussi les tailles Tailwind et les tailles minimales harmonisées. */
+:root[data-text-size="large"] { font-size: 112.5%; }
+:root[data-text-size="extra-large"] { font-size: 125%; }
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html {
+    max-width: 100%;
+    overflow-x: clip;
+    background: oklch(0.975 0.008 92);
+  }
+  body {
+    @apply bg-background text-foreground;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  #root { min-width: 0; max-width: 100%; overflow-x: clip; }
+  img, picture, video, canvas, svg { max-inline-size: 100%; }
+  input, textarea, select, button { max-inline-size: 100%; min-inline-size: 0; }
+  button, [role="button"] { white-space: normal; overflow-wrap: anywhere; }
+  button:not(:disabled), [role="button"]:not([aria-disabled="true"]), [type="button"]:not(:disabled), [type="submit"]:not(:disabled), a[href], select:not(:disabled), input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled) { @apply cursor-pointer; }
+  :where(a[href], button, input, select, textarea, [role="button"], [role="tab"], [role="switch"]):focus-visible { outline: 3px solid oklch(0.52 0.10 157); outline-offset: 3px; }
+  ::selection { background: oklch(0.74 0.12 109 / 70%); color: oklch(0.20 0.025 153); }
+}
+
+@layer components {
+  .container { width: 100%; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+  .flex { min-height: 0; min-width: 0; }
+  .fixed.inset-0 { overflow-x: clip; }
+  .fixed.inset-0 > .mx-auto { width: 100%; min-width: 0; max-width: 100%; }
+  .tc-skip-link { position: fixed; z-index: 100; top: 0.75rem; left: 0.75rem; transform: translateY(-150%); border-radius: 0.75rem; background: #1d493a; padding: 0.75rem 1rem; color: #f8fbf4; font-weight: 800; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1); }
+  .tc-skip-link:focus { transform: translateY(0); }
+  .control { width: 100%; min-width: 0; min-height: 2.75rem; border: 1px solid #d9e6d5; border-radius: 0.75rem; background: #fff; padding: 0.625rem 0.75rem; color: #365b49; font-size: 0.875rem; font-weight: 650; outline: none; }
+  select.control { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .control::placeholder { color: #869b8f; }
+  .control:focus { border-color: #5d9370; box-shadow: 0 0 0 3px rgb(93 147 112 / 18%); }
+  .action-primary { display: inline-flex; max-width: 100%; min-width: 0; min-height: 2.75rem; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 0.75rem; background: #244d3d; padding: 0.625rem 0.875rem; color: #fff; font-size: 0.875rem; font-weight: 800; text-align: center; white-space: normal; overflow-wrap: anywhere; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms cubic-bezier(0.23, 1, 0.32, 1); }
+  .action-primary:hover:not(:disabled) { background: #193f31; }
+  .action-primary:active:not(:disabled) { transform: scale(0.97); }
+  .action-primary:disabled { cursor: not-allowed; opacity: 0.5; }
+  @media (min-width: 640px) { .container { padding-left: 1.5rem; padding-right: 1.5rem; } }
+  @media (min-width: 1024px) { .container { padding-left: 2rem; padding-right: 2rem; max-width: 1280px; } }
+}
+
+/* Lisibilité TrailConnect : 16 px pour le contenu et les consignes, 14 px minimum pour les libellés.
+   Les surcharges couvrent aussi les utilitaires Tailwind historiques (text-xs et tailles arbitraires). */
+@layer utilities {
+  .text-xs,
+  .text-\[9px\],
+  .text-\[10px\],
+  .text-\[11px\],
+  .text-\[12px\],
+  .text-\[13px\] { font-size: 0.875rem !important; line-height: 1.35 !important; }
+  .text-sm,
+  .text-\[14px\],
+  .text-\[15px\] { font-size: 1rem !important; line-height: 1.5 !important; }
+}
+
+@media (max-width: 767px) {
+  @layer base {
+    p, li, label, input, textarea, select { font-size: 1rem !important; line-height: 1.5 !important; }
+    input, textarea, select { min-height: 2.75rem; }
+    button, [role="button"], input[type="checkbox"], input[type="radio"] { min-height: 2.75rem; }
+  }
+
+  [data-messaging-panel] button {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+
+  [data-messaging-panel] button:focus-visible {
+    outline: 3px solid #f1bd55;
+    outline-offset: 3px;
+  }
+
+  [data-messaging-panel] > *,
+  [data-messaging-panel] section,
+  [data-messaging-panel] aside {
+    min-width: 0;
+  }
+
+  .fixed.inset-0 {
+    max-width: 100vw;
+    overflow-x: clip;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tc-enter { animation: tc-rise 420ms cubic-bezier(0.23, 1, 0.32, 1) both; }
+  .bg-\[\#eef8ef\] { animation: tc-day-departure-glow 2.8s cubic-bezier(0.23, 1, 0.32, 1) infinite; }
+  .tc-mark-all-confirmed { animation: tc-confirm-pop 260ms cubic-bezier(0.23, 1, 0.32, 1) both; }
+}
+
+@keyframes tc-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes tc-day-departure-glow { 0%, 100% { box-shadow: 0 8px 22px rgb(185 132 35 / 8%); } 50% { box-shadow: 0 12px 30px rgb(185 132 35 / 20%); } }
+@keyframes tc-confirm-pop { from { opacity: 0; transform: scale(.95); } to { opacity: 1; transform: scale(1); } }
+.bg-\[\#eef8ef\] { border-color: #ead28b !important; background-color: #fff8e6 !important; }
+
+@media print {
+  @page { size: auto; margin: 12mm; }
+  body { background: #fff !important; color: #172b21 !important; }
+  #root * { visibility: hidden !important; }
+  #root [data-day-of-print], #root [data-day-of-print] * { visibility: visible !important; }
+  #root [data-day-of-print] { position: absolute !important; inset: 0 auto auto 0 !important; width: 100% !important; overflow: visible !important; border: 0 !important; box-shadow: none !important; }
+  #root [data-day-of-print] a { color: inherit !important; text-decoration: none !important; }
+  #root [data-day-of-print] .tc-no-print { display: none !important; }
+  #root [data-day-of-print] article, #root [data-day-of-print] div { break-inside: avoid; }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TrailConnect">
+  <rect width="64" height="64" rx="14" fill="#1d493a" />
+  <path d="M4 54 L26 20 L46 54 Z" fill="#d7e8cf" />
+  <path d="M22 54 L41 12 L61 54 Z" fill="#d7e8cf" />
+  <path d="M33 24 L41 12 L49 24 Z" fill="#ffffff" />
+  <path d="M9 51 H26 L34 45 H56" stroke="#1d493a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

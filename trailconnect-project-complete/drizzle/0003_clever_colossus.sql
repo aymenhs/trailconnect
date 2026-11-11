@@ -1,0 +1,2 @@
+ALTER TABLE `userProfiles` ADD `timezone` varchar(64) DEFAULT 'America/Toronto' NOT NULL;--> statement-breakpoint
+ALTER TABLE `userProfiles` ADD `units` enum('metric','imperial') DEFAULT 'metric' NOT NULL;

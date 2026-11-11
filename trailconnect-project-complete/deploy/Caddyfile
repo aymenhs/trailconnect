@@ -1,0 +1,104 @@
+# TrailConnect — bloc de site Caddy
+#
+# ┌── SI CADDY SERT DÉJÀ AUTRE CHOSE SUR CETTE MACHINE ────────────────────────┐
+# │ NE remplace PAS /etc/caddy/Caddyfile : tes sites actuels disparaîtraient.  │
+# │                                                                            │
+# │   sudo cp /etc/caddy/Caddyfile /etc/caddy/Caddyfile.bak-$(date +%F)        │
+# │   sudo mkdir -p /etc/caddy/sites                                           │
+# │   # une seule fois, en fin de /etc/caddy/Caddyfile :                       │
+# │   #     import /etc/caddy/sites/*.caddy                                    │
+# │   sudo cp ce-fichier /etc/caddy/sites/trailconnect.caddy                   │
+# │   sudo caddy validate --config /etc/caddy/Caddyfile                        │
+# │   sudo systemctl reload caddy      # reload, pas restart                   │
+# └────────────────────────────────────────────────────────────────────────────┘
+#
+# Sur une machine vierge, ce fichier peut simplement devenir /etc/caddy/Caddyfile.
+#
+# ── Quel bloc garder ? ────────────────────────────────────────────────────────
+#
+# Le HTTPS est obligatoire, y compris sur un réseau local : /api/oauth/login pose
+# son cookie anti-CSRF avec Secure, et Google refuse une IP privée comme URI de
+# redirection. En HTTP la connexion échoue sur « invalid oauth state ».
+#
+#   A. HTTP-01  — les ports 80/443 sont joignables depuis Internet.
+#                 C'est le cas si Caddy a déjà obtenu des certificats sur cette
+#                 machine (preflight.sh te le dit). Rien de particulier à faire.
+#
+#   B. DNS-01   — machine purement locale, aucun port ouvert.
+#                 Un enregistrement A public pointe vers l'adresse privée ; il ne
+#                 résout que chez toi. Let's Encrypt valide par un TXT et ne
+#                 contacte jamais la machine.
+#                 Nécessite le module :
+#                     sudo caddy add-package github.com/caddy-dns/cloudflare
+#                 ⚠ REMPLACE LE BINAIRE CADDY et redémarre le service : brève
+#                   coupure pour tous tes autres sites. À éviter sur une machine
+#                   partagée — préfère le bloc C.
+#
+#   C. DNS-01 sans toucher à Caddy  ← à privilégier si Caddy sert déjà autre chose
+#                 Un outil externe obtient le certificat, Caddy se contente de le
+#                 lire. Le binaire n'est jamais remplacé, aucune coupure.
+#                     curl https://get.acme.sh | sh -s email=toi@example.com
+#                     export CF_Token="ton_jeton"      # Zone → DNS → Edit
+#                     ~/.acme.sh/acme.sh --issue --dns dns_cf \
+#                         -d trailconnect.example.com
+#                     sudo mkdir -p /etc/caddy/certs
+#                     ~/.acme.sh/acme.sh --install-cert -d trailconnect.example.com \
+#                         --key-file       /etc/caddy/certs/trailconnect.key \
+#                         --fullchain-file /etc/caddy/certs/trailconnect.crt \
+#                         --reloadcmd      "sudo systemctl reload caddy"
+#                 acme.sh s'installe dans ~/.acme.sh et pose sa propre tâche de
+#                 renouvellement : rien de global n'est modifié.
+#
+# Garde exactement un des trois blocs.
+
+# ── A. HTTP-01 (ports ouverts) ────────────────────────────────────────────────
+trailconnect.example.com {
+	encode zstd gzip
+
+	# L'application pose ses propres en-têtes via helmet ; ces deux-là doivent
+	# s'appliquer à toute réponse, y compris celles que Caddy sert lui-même.
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+		-Server
+	}
+
+	# Adapte le port si 3000 était déjà pris (voir preflight.sh) : il doit
+	# correspondre exactement à PORT dans /etc/trailconnect/env.
+	reverse_proxy 127.0.0.1:3000 {
+		flush_interval -1
+	}
+}
+
+# ── B. DNS-01 par le module Caddy (remplace le binaire — machine dédiée) ──────
+# trailconnect.example.com {
+# 	tls {
+# 		dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+# 	}
+#
+# 	encode zstd gzip
+#
+# 	header {
+# 		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+# 		-Server
+# 	}
+#
+# 	reverse_proxy 127.0.0.1:3000 {
+# 		flush_interval -1
+# 	}
+# }
+
+# ── C. Certificat obtenu par acme.sh (binaire Caddy intact) ───────────────────
+# trailconnect.example.com {
+# 	tls /etc/caddy/certs/trailconnect.crt /etc/caddy/certs/trailconnect.key
+#
+# 	encode zstd gzip
+#
+# 	header {
+# 		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+# 		-Server
+# 	}
+#
+# 	reverse_proxy 127.0.0.1:3000 {
+# 		flush_interval -1
+# 	}
+# }

@@ -1,0 +1,1 @@
+ALTER TABLE `friendships` ADD `requestNote` varchar(280);

@@ -1,0 +1,1 @@
+ALTER TABLE `userNotificationPreferences` ADD `dayOfBriefUpdates` boolean DEFAULT true NOT NULL;

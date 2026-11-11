@@ -1,0 +1,1 @@
+ALTER TABLE `reports` ADD `messageChannel` enum('direct','group');

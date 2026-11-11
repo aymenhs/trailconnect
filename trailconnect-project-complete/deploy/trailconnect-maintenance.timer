@@ -1,0 +1,11 @@
+[Unit]
+Description=Run TrailConnect outing maintenance every 15 minutes
+
+[Timer]
+# Reminders go out up to two hours before departure: a 15-minute step keeps
+# them on time. Each run skips what an earlier run already sent.
+OnCalendar=*:0/15
+Persistent=true
+
+[Install]
+WantedBy=timers.target

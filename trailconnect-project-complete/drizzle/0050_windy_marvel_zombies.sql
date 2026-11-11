@@ -1,0 +1,1 @@
+ALTER TABLE `userMessagingPreferences` MODIFY COLUMN `directMessagePolicy` enum('friends','everyone','none') NOT NULL DEFAULT 'everyone';

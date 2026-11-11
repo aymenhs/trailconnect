@@ -1,0 +1,1 @@
+ALTER TABLE `events` ADD `allTrailsUrl` varchar(1024);
